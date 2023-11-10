@@ -2,7 +2,18 @@
 
 This repository contains a React application that demonstrates how to implement authentication using Auth0. The application showcases the authentication flow, including user login and session management.
 
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Setup the Project](#setup-the-project)
+  - [Finding the Auth0 Application Keys](#finding-the-auth0-application-keys)
+- [Project Structure](#project-structure)
+
+
 ## Getting Started
+
+### Setup the Project
 
 To get started with this example, follow the steps below: \
 Skip to the step 4  if you have already created an application and have already changed the URLs.
@@ -59,7 +70,7 @@ Skip to the step 4  if you have already created an application and have already 
 
    - Any changes you make to the code will automatically trigger a reload of the application in the browser. Additionally, any lint errors will be displayed in the console.
 
-## Finding the Auth0 Application Keys
+### Finding the Auth0 Application Keys
 
 To find the "Domain" and "Client ID" values for your Auth0 application:
 
@@ -67,3 +78,22 @@ To find the "Domain" and "Client ID" values for your Auth0 application:
 2. Navigate to the "Applications" section.
 3. Select your application from the list.
 4. In the application settings, you will find the "Domain" and "Client ID" values. Copy these values and add them after the "**=**"  in the `.env` file.
+
+
+## Project Structure
+
+The project files are structured as follows (under the `src` directory):
+- **index.tsx**: The entry point of the application.
+- **App.tsx**: The root component of the application that contains the user interface.
+- **components**
+  - **LoginButton.txs**: The component that displays the login button.
+  - **LogoutButton.txs**: The component that displays the logout button.
+  - **Profile.txs**: The component that displays the user profile informations
+    like user picture, name and email.
+
+So, to start the application, you need to run the `index.tsx` file. This file
+contains the `ReactDOM.render()` method that renders the `App.tsx` component.
+The `App.tsx` component contains the user interface of the application. The
+`App.tsx` component uses the `LoginButton.tsx`, `LogoutButton.tsx` and
+`Profile.tsx` components to display the login button, logout button and user
+profile informations respectively.
