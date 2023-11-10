@@ -5,9 +5,16 @@ together to implement authentication and authorization using Auth0. The React
 application handles the frontend user interface, while the Express server
 manages the authentication and authorization processes.
 
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Prepare the project](#prepare-the-project)
+  - [Get the Auth0 Audience](#get-the-auth0-audience)
+  - [Run the project](#run-the-project)
+
 ## Getting Started
 
-### Prepare the projects
+### Prepare the project
 
 To get started with this example, follow the steps below: \
 Skip to the step 4 if you have already created an application and have already
@@ -20,13 +27,13 @@ changed the URLs.
 
 2. Set up an Auth0 account:
     - Sign up for an account at [Auth0](https://auth0.com) if you don't have one already.
-    - Create a new Auth0 application in the Auth0 Dashboard. You will use this
-      application for all the examples in this repository.
+    - Create a new Auth0 Single Page Application in the Auth0 Dashboard. You
+      will use this application for all the examples in this repository.
 
 3. Configure the Auth0 application:
     - In the Auth0 Dashboard, go to the "Settings" tab for your application.
     - Under "Application URIs", add the following URLs:
-        * Allowed Callback URLs: <http://localhost:4040/callback>
+        * Allowed Callback URLs: <http://localhost:4040/callback, http://localhost:4040>
         * Allowed Logout URLs: <http://localhost:4040>
         * Allowed Web Origins: <http://localhost:4040>
 
@@ -129,3 +136,21 @@ In the same Auth0 API registration page, follow these steps:
   - Click on any of your existing users to give one of them the admin role.
   - On the user's page, click on the **"Roles"** tab and the click on the **"Assign Roles"** button.
   - Select the `messages-admin` role from the dropdown menu and click on the **Assign** button.
+
+
+### Run the project
+Run the server part:
+``` bash
+cd server
+npm start
+```
+
+And run the client:
+
+``` bash
+cd client
+npm start
+```
+
+Now you will be able to access to the website with this url
+[localhost:4040](http://localhost:4040)

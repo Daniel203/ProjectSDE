@@ -21,13 +21,14 @@ To get started with these examples, follow the steps below:
 2. Set up an Auth0 account:
 
    - Sign up for an account at [Auth0](https://auth0.com) if you don't have one already.
-   - Create a new Auth0 application in the Auth0 Dashboard. You will use this application for all the examples in this repository.
+   - Create a new Auth0 Single Page Application in the Auth0 Dashboard. You
+     will use this application for all the examples in this repository.
 
 3. Configure the Auth0 application:
 
    - In the Auth0 Dashboard, go to the "Settings" tab for your application.
    - Under "Application URIs", add the following URLs:
-    	* Allowed Callback URLs: <http://localhost:4040/callback>
+      * Allowed Callback URLs: <http://localhost:4040/callback, http://localhost:4040>
     	* Allowed Logout URLs: <http://localhost:4040>
     	* Allowed Web Origins: <http://localhost:4040>
 
