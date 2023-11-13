@@ -1,3 +1,6 @@
+// Middleware for handling 404 errors
+
+
 import { Request, Response, NextFunction } from "express";
 
 export const notFoundHandler = (

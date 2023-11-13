@@ -11,6 +11,9 @@ manages the authentication and authorization processes.
   - [Prepare the project](#prepare-the-project)
   - [Get the Auth0 Audience](#get-the-auth0-audience)
   - [Run the project](#run-the-project)
+- [Project Structure](#project-structure)
+  - [Client](#client)
+  - [Server](#server)
 
 ## Getting Started
 
@@ -154,3 +157,70 @@ npm start
 
 Now you will be able to access to the website with this url
 [localhost:4040](http://localhost:4040)
+
+
+## Project Structure
+
+The project is divided into two parts: the client and the server. 
+
+### Client
+
+The client files are structure as follows (under the `client/src` directory):
+- **index.tsx**: The entry point of the application.
+- **App.tsx**: The root component of the application that contains the user interface.
+- **auth0-provider-with-navigate.tsx**: The component that wraps the application
+  and provides the Auth0 context to the application.
+- **components**
+  - **authentication-guard.tsx**: The component that handles the authentication
+    process and redirects the user to the login page if the user is not
+    authenticated or to the requested page if the user is authenticated.
+  - **code-snippet.tsx**: The component that displays the code snippet ui.
+  - **page-layout.tsx**: The component that displays the page layout (navbar,
+    page content, footer).
+  - **page-loader.tsx**: The component that displays the page loader indicator.
+  - **buttons**:
+    - **login-button.tsx**: The component that displays the login button.
+    - **logout-button.tsx**: The component that displays the logout button.
+  - **navigation**:
+    - **desktop**: Contains the navbar elements displayed on desktop.
+    - **mobile**: Contains the navbar elements displayed on mobile.
+  - **models**: Foldre that contains the interfaces used in the application.
+  - **pages**: 
+    - **admin-page.tsx**: Displays the admin messages page, accessible only by admin users. 
+    - **callback-page.tsx**: Handles the callback route, displays the error message if the authentication fails.
+    - **home-page.tsx**: Displays the home page, visible by all users, even if not authenticated.
+    - **not-fonud-page.tsx**: Displays the not found page, visible by all users, even if not authenticated.
+    - **profile-page.tsx**: Displays the profile page, accessible only by authenticated users.
+    - **protected-page.tsx**: Displays the protected page, accessible only by authenticated users and don't require admin permissions.
+    - **public-page.tsx**: Displays the public page, visible by all users, even if not authenticated.
+  - **services**:
+    - **external-api.service.ts**: Handles the external api calls.
+    - **message.service.ts**: Service that handles the messages api calls.
+
+So, to start the application, you need to run the `index.tsx` file. This file
+contains the `ReactDOM.render()` method that renders the `App.tsx` component.
+The `App.tsx` component contains the user interface of the application. 
+
+### Server
+
+The server files are structure as follows (under the `server/src` directory):
+- **index.ts**: The entry point of the application, configures the server and
+  starts it.
+- **messages**
+  - **message.model.ts**: The message model.
+  - **messages.permissions.ts**: The permissions required to access the messages
+    endpoints.
+  - **messages.router.ts**: The messages router that handles the messages
+    endpoints.
+  - **messages.service.ts**: The messages service that handles the messages
+    requests.
+- **middleware**:
+  - **auth0.middleware.ts**: The middleware that handles the authentication
+    process, checks the access token for validity.
+  - **error.middleware.ts**: The middleware that handles the errors.
+  - **not-found.middleware.ts**: The middleware that handles the not found
+    routes.
+
+To start the server, you need to run the `index.ts` file. This file contains the
+server configuration and starts the server. The server is configured to listen
+on port `6060` by default.

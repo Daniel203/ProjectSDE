@@ -1,3 +1,12 @@
+// Middleware for handling access token errors
+// This middleware handles errors thrown by the express-oauth2-jwt-bearer middleware,
+// and returns a JSON response with the appropriate error message.
+// The errors handled are:
+// InsufficientScopeError: thrown when the user does not have the required permissions.
+// InvalidTokenError: thrown when the access token is invalid.
+// UnauthorizedError: thrown when the access token is missing.
+// InternalServerError: thrown when an unexpected error occurs.
+
 import { Request, Response, NextFunction } from "express";
 import {
   InvalidTokenError,
